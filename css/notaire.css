@@ -7,3 +7,152 @@
 .main-nav a.active{color:var(--gold)}
 .notaire-hero{min-height:94vh;background-size:cover;background-position:center;display:flex;align-items:center;padding:150px 0 80px;color:white}.notaire-hero-grid{display:grid;grid-template-columns:1.05fr .75fr;gap:64px;align-items:center}.notaire-hero h1{margin-bottom:22px}.notaire-hero-text .hero-text{font-size:20px;max-width:780px}.credentials-strip{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0}.credentials-strip span{border:1px solid rgba(201,167,91,.5);color:#f7e8bf;border-radius:999px;padding:9px 13px;font-size:13px;letter-spacing:.03em;background:rgba(255,255,255,.05)}.portrait-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:32px;padding:16px;box-shadow:0 34px 90px rgba(0,0,0,.35);backdrop-filter:blur(10px)}.portrait-card img{width:100%;display:block;border-radius:24px;object-fit:cover}.align-start{align-items:start}.timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:42px}.timeline-card{background:white;border-radius:24px;padding:32px;border:1px solid rgba(13,47,79,.08);box-shadow:0 18px 45px rgba(7,20,38,.06)}.timeline-card span{font-family:Georgia,serif;color:var(--gold);font-size:38px;display:block;margin-bottom:18px}.timeline-card h3{font-size:23px}.timeline-card p{color:#4d5660}.philosophy{background:linear-gradient(135deg,var(--navy),#10365a);color:white}.philosophy h2,.philosophy h3{color:white}.philosophy-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:42px}.philosophy-grid article{border:1px solid rgba(201,167,91,.32);border-radius:22px;padding:28px;background:rgba(255,255,255,.05)}.philosophy-grid p{color:#ddd6ca;font-size:15px}.trust-list{display:grid;gap:18px}.trust-list article{background:white;border-left:4px solid var(--gold);border-radius:18px;padding:24px 26px;box-shadow:0 14px 34px rgba(7,20,38,.06)}.trust-list h3{font-size:23px;margin-bottom:10px}.riviera-panel{background-size:cover;background-position:center;padding:120px 0;color:white}.riviera-panel h2{color:white;max-width:780px}.riviera-panel p:not(.eyebrow){max-width:760px;font-size:19px;color:#f3eee3}.contact-card-portrait{align-items:center;justify-content:flex-start}.contact-card-portrait>img{width:210px;height:250px;object-fit:cover;border-radius:24px;box-shadow:0 20px 50px rgba(7,20,38,.18)}.contact-card-portrait .btn{margin-top:24px}
 @media(max-width:1100px){.notaire-hero-grid{grid-template-columns:1fr}.portrait-card{max-width:420px}.timeline-grid,.philosophy-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.notaire-hero{padding-top:120px}.timeline-grid,.philosophy-grid{grid-template-columns:1fr}.contact-card-portrait>img{width:100%;height:auto;margin-bottom:24px}.credentials-strip span{font-size:12px}.riviera-panel{padding:78px 0}}
+
+
+/* Menu déroulant Expertises */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-drop-link::after {
+  content: " ▾";
+  font-size: .75em;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(199,163,91,.28);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.16);
+  padding: 10px;
+  display: none;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-dropdown-menu a {
+  color: #0d1b2e !important;
+  padding: 10px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.12);
+  color: #b58a39 !important;
+}
+
+.main-nav .nav-dropdown > a,
+.nav .nav-dropdown > a {
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    display: grid;
+    box-shadow: none;
+    margin-top: 8px;
+    width: min(100%, 320px);
+  }
+}
+
+
+/* Correction menu déroulant Expertises cliquable */
+.site-header {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+.main-nav,
+.nav {
+  overflow: visible !important;
+}
+
+.nav-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  padding: 0 0 14px 0;
+  margin-bottom: -14px;
+  z-index: 10000 !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 280px !important;
+  background: rgba(255,255,255,.99) !important;
+  border: 1px solid rgba(199,163,91,.32) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.18) !important;
+  padding: 10px !important;
+  display: none;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.nav-dropdown-menu a {
+  display: block !important;
+  color: #0d1b2e !important;
+  padding: 11px 13px !important;
+  border-radius: 10px !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.14) !important;
+  color: #b58a39 !important;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    display: grid !important;
+    box-shadow: none !important;
+    margin-top: 8px !important;
+    width: min(100%, 320px) !important;
+  }
+}

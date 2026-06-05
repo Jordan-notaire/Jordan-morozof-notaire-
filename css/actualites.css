@@ -1,0 +1,186 @@
+:root{
+  --navy:#0d1b2e; --navy2:#142640; --gold:#c7a35b; --sand:#f6f1e8; --cream:#fbf8f2; --text:#243044; --muted:#697386; --white:#fff; --shadow:0 18px 50px rgba(13,27,46,.14); --radius:24px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:var(--cream);line-height:1.65}
+a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(13,27,46,.08)}
+.brand{display:flex;gap:14px;align-items:center;color:var(--navy)}.brand-mark,.footer-mark{width:44px;height:44px;border:1px solid rgba(199,163,91,.8);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.04em}.brand strong{display:block;letter-spacing:.05em}.brand small{display:block;color:var(--muted);font-size:12px;margin-top:-3px}.nav{display:flex;align-items:center;gap:20px}.nav a{color:var(--navy);font-size:14px;font-weight:700}.nav a:hover,.nav .active{color:var(--gold)}.nav-cta{border:1px solid rgba(199,163,91,.55);border-radius:999px;padding:8px 14px}.menu-toggle{display:none;background:none;border:0;color:var(--navy);font-size:26px}
+.hero{min-height:78vh;background:linear-gradient(90deg, rgba(7,20,38,.78), rgba(7,20,38,.16)),url('../images/actualites-hero-notaire-famille.png') center/cover no-repeat;display:grid;align-items:center;padding:150px 7vw 90px;color:white}.hero-content{width:min(720px,92vw)}.eyebrow{text-transform:uppercase;letter-spacing:.25em;color:var(--gold);font-weight:800;font-size:12px;margin:0 0 14px}.eyebrow.dark{color:#b08a45}h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0 0 18px;color:var(--navy)}.hero h1{color:#fff;font-size:clamp(46px,7vw,82px)}.hero p:not(.eyebrow){font-size:20px;color:rgba(255,255,255,.90);margin:0 0 34px}.hero-actions,.cta-actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:999px;font-weight:800;font-size:14px;transition:.25s}.btn.primary{background:var(--gold);color:var(--navy)}.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(199,163,91,.28)}.btn.ghost{border:1px solid rgba(255,255,255,.55);color:#fff}.btn.secondary-dark{background:var(--navy);color:#fff}
+.section{padding:92px 0}.container{width:min(1180px,90vw);margin:auto}.intro-section{background:white}.intro-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:start}.intro-grid h2,.section-title h2,.videos-intro h2,.cta h2{font-size:clamp(32px,4vw,52px)}.intro-grid p{font-size:17px;color:var(--muted)}.articles-section{background:var(--sand)}.section-title{max-width:780px;margin:0 0 44px}.section-title p:not(.eyebrow){color:var(--muted)}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.article-card{background:white;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px rgba(13,27,46,.09);border:1px solid rgba(13,27,46,.08);transition:.25s}.article-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.article-card img{height:220px;width:100%;object-fit:cover}.article-content{padding:26px}.meta{color:#9a7a3b;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;margin:0 0 12px}.article-content h3{font-size:25px}.article-content p:not(.meta){color:var(--muted)}
+.read-more{border:0;background:transparent;color:var(--navy);font-weight:900;padding:0;cursor:pointer;font-size:14px}.read-more:hover{color:var(--gold)}
+.article-drawers{margin-top:38px}.detail-article{display:none;background:white;border:1px solid rgba(199,163,91,.30);border-radius:24px;padding:36px;margin:0 0 22px;box-shadow:0 12px 35px rgba(13,27,46,.09);position:relative}.detail-article.open{display:block;animation:fadeIn .25s ease}.detail-article h3{font-size:34px}.detail-article p{color:var(--muted);font-size:17px}.close-article{position:absolute;right:20px;top:16px;border:0;background:var(--sand);color:var(--navy);border-radius:50%;width:34px;height:34px;font-size:22px;cursor:pointer}@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.videos-section{background:white}.videos-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:start}.videos-intro p{color:var(--muted)}.videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.video-card{min-height:180px;padding:24px;border-radius:22px;background:linear-gradient(135deg,rgba(13,27,46,.92),rgba(20,38,64,.78)),url('../images/actualites-hero-notaire-famille.png') center/cover;color:white;box-shadow:0 12px 30px rgba(13,27,46,.13);border:1px solid rgba(199,163,91,.30);transition:.25s}.video-card:hover{transform:translateY(-4px)}.video-card h3{color:white;font-size:25px}.video-card p{color:rgba(255,255,255,.78);margin:0}.play{width:46px;height:46px;border-radius:50%;background:white;color:var(--navy);display:grid;place-items:center;margin-bottom:26px;font-size:18px}
+.notice-section{background:var(--cream);padding:42px 0}.notice{display:flex;align-items:center;gap:22px;border:1px solid rgba(199,163,91,.35);background:white;padding:22px 28px;border-radius:18px;box-shadow:0 10px 26px rgba(13,27,46,.06)}.notice-icon{width:44px;height:44px;border-radius:50%;background:var(--gold);color:white;display:grid;place-items:center;font-weight:900;font-family:'Playfair Display',serif}.notice p{flex:1;color:var(--muted)}
+.cta{padding:80px 0;background:linear-gradient(135deg,var(--navy),#172b45);color:white}.cta h2{color:white}.cta p{color:rgba(255,255,255,.78);max-width:690px}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.footer{background:#071120;color:rgba(255,255,255,.76);padding:38px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer strong{color:#fff}.footer p{margin:6px 0 0}.footer-mark{flex:0 0 auto}
+@media(max-width:980px){.site-header{position:static;flex-direction:column;gap:14px}.menu-toggle{display:block;position:absolute;right:5vw;top:18px}.nav{flex-wrap:wrap;justify-content:center;gap:12px}.hero{min-height:68vh;padding:90px 5vw}.intro-grid,.articles-grid,.videos-layout,.videos-grid{grid-template-columns:1fr}.notice,.cta-inner,.footer-inner{flex-direction:column;text-align:center}.article-card img{height:260px}}
+.detail-image{width:100%;height:360px;object-fit:cover;border-radius:18px;margin:0 0 30px;box-shadow:0 10px 28px rgba(13,27,46,.10)}
+.detail-article h4{font-family:'Playfair Display',serif;color:var(--navy);font-size:26px;line-height:1.2;margin:30px 0 10px}
+.detail-article h5{font-size:18px;color:var(--navy);margin:22px 0 8px;font-weight:800}
+.detail-article ul{color:var(--muted);font-size:17px;margin:8px 0 18px;padding-left:24px}
+.detail-article li{margin:5px 0}.detail-article .lead{font-weight:600;color:#526071}
+@media(max-width:980px){.detail-image{height:240px}.detail-article{padding:24px}.detail-article h3{font-size:28px}}
+
+
+/* Article testament : présentation horizontale avec déroulé intégré */
+.article-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(300px,42%) 1fr;align-items:stretch}
+.article-featured img{height:100%;min-height:310px;width:100%;object-fit:cover}
+.article-featured .article-content{padding:34px 38px}
+.article-inline-detail{margin-top:18px;border-top:1px solid rgba(199,163,91,.28);padding-top:16px}
+.article-inline-detail summary{display:inline-flex;cursor:pointer;color:var(--navy);font-weight:900;font-size:14px;list-style:none}
+.article-inline-detail summary::-webkit-details-marker{display:none}
+.article-inline-detail summary:hover{color:var(--gold)}
+.article-inline-detail[open] summary{margin-bottom:18px;color:var(--gold)}
+.article-inline-detail h4{font-family:'Playfair Display',serif;color:var(--navy);font-size:25px;line-height:1.2;margin:24px 0 8px}
+.article-inline-detail p{color:var(--muted);font-size:16px}
+@media(max-width:980px){.article-featured{grid-template-columns:1fr}.article-featured img{height:260px;min-height:0}.article-featured .article-content{padding:26px}}
+
+
+/* Menu déroulant Expertises */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-drop-link::after {
+  content: " ▾";
+  font-size: .75em;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(199,163,91,.28);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.16);
+  padding: 10px;
+  display: none;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-dropdown-menu a {
+  color: #0d1b2e !important;
+  padding: 10px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.12);
+  color: #b58a39 !important;
+}
+
+.main-nav .nav-dropdown > a,
+.nav .nav-dropdown > a {
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    display: grid;
+    box-shadow: none;
+    margin-top: 8px;
+    width: min(100%, 320px);
+  }
+}
+
+
+/* Correction menu déroulant Expertises cliquable */
+.site-header {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+.main-nav,
+.nav {
+  overflow: visible !important;
+}
+
+.nav-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  padding: 0 0 14px 0;
+  margin-bottom: -14px;
+  z-index: 10000 !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 280px !important;
+  background: rgba(255,255,255,.99) !important;
+  border: 1px solid rgba(199,163,91,.32) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.18) !important;
+  padding: 10px !important;
+  display: none;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.nav-dropdown-menu a {
+  display: block !important;
+  color: #0d1b2e !important;
+  padding: 11px 13px !important;
+  border-radius: 10px !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.14) !important;
+  color: #b58a39 !important;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    display: grid !important;
+    box-shadow: none !important;
+    margin-top: 8px !important;
+    width: min(100%, 320px) !important;
+  }
+}

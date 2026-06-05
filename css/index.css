@@ -2,3 +2,152 @@
 
 .values{background:var(--cream)}.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:42px}.value-card{background:white;border-radius:22px;padding:28px;box-shadow:0 14px 38px rgba(7,20,38,.06);border:1px solid rgba(13,47,79,.07)}.value-card span{font-size:28px;display:block;margin-bottom:14px}.value-card h3{font-size:21px;margin-bottom:14px}.value-card p{font-size:15px;color:#4a535c}.contact-details{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.contact-details p{background:var(--cream);border-radius:18px;padding:18px;margin:0}.contact-details span{display:inline-block;margin-right:6px}.contact-details strong{color:var(--navy)}.contact-details a{color:var(--blue);text-decoration:none;font-weight:700}.footer-grid{grid-template-columns:1fr 1fr 1fr 1fr}.footer-logo img{max-width:150px;background:white;border-radius:10px;padding:8px}.footer-logo p{font-size:13px}
 @media(max-width:1100px){.values-grid{grid-template-columns:repeat(2,1fr)}.contact-details{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.values-grid,.footer-grid{grid-template-columns:1fr}}
+
+
+/* Menu déroulant Expertises */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-drop-link::after {
+  content: " ▾";
+  font-size: .75em;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(199,163,91,.28);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.16);
+  padding: 10px;
+  display: none;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-dropdown-menu a {
+  color: #0d1b2e !important;
+  padding: 10px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.12);
+  color: #b58a39 !important;
+}
+
+.main-nav .nav-dropdown > a,
+.nav .nav-dropdown > a {
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    display: grid;
+    box-shadow: none;
+    margin-top: 8px;
+    width: min(100%, 320px);
+  }
+}
+
+
+/* Correction menu déroulant Expertises cliquable */
+.site-header {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+.main-nav,
+.nav {
+  overflow: visible !important;
+}
+
+.nav-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  padding: 0 0 14px 0;
+  margin-bottom: -14px;
+  z-index: 10000 !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 280px !important;
+  background: rgba(255,255,255,.99) !important;
+  border: 1px solid rgba(199,163,91,.32) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.18) !important;
+  padding: 10px !important;
+  display: none;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.nav-dropdown-menu a {
+  display: block !important;
+  color: #0d1b2e !important;
+  padding: 11px 13px !important;
+  border-radius: 10px !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(199,163,91,.14) !important;
+  color: #b58a39 !important;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    display: grid !important;
+    box-shadow: none !important;
+    margin-top: 8px !important;
+    width: min(100%, 320px) !important;
+  }
+}
